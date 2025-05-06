@@ -8,8 +8,8 @@ from model_testing_function import model_testing_function
 
 
 # defined data folders
-model_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/output_dir/U-net_2_LVL_4_FLT_2xconv/LR0.01_BS16_run1"
-test_set_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/input_dir/test_set"
+model_folder = r"C:/Users/username/Documents/TEST_UNET_CODE/output_dir/U-net_2_LVL_4_FLT_2xconv/LR0.01_BS16_run1"
+test_set_folder = r"C:/Users/username/Documents/TEST_UNET_CODE/input_dir/test_set"
 # define if images with FP (Blue) and FN (red) will be saved
 plot_results = True
 
