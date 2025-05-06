@@ -9,8 +9,8 @@ from model_training_function import training_function
 
 # define U-net arhitecture and input/output folder
 # other parameters are in training_parameters_file.csv
-input_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/input_dir"
-output_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/output_dir"
+input_folder = r"C:/Users/username/Documents/TEST_UNET_CODE/input_dir"
+output_folder = r"C:/Users/username/Documents/EST_UNET_CODE/output_dir"
 double_CNV = True
 LVL = 2
 FLT = 4
