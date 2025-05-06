@@ -19,7 +19,9 @@ Additional for testing:<br>
 Python 3.10.14
 
 ## Model training
+#### Models can be trained using two approaches: via the command line by executing model_training_function.py, or within a code editor environment (e.g., PyCharm, Spyder) using train_from_code_editor.py.
 
+Steps:
 1) Create the traning / cross validation set and save the data into following folder structure:<br>
     - "images" containing original grayscale images (pixel values 0-255)<br>
     - "masks" containing groundtruth annotated images (pixel values 0-255)<br>
@@ -99,28 +101,32 @@ In case you want also TensorBoard output uncomment "keras.callbacks.TensorBoard(
 
 
 ## Model testing
+#### Models can be tested using two approaches: via the command line by executing model_testing_function.py, or within a code editor environment (e.g., PyCharm, Spyder) using test_from_code_editor.py.
 
+Steps:
 1) Create testing set and save the data into following folder structure:<br>
     - "images" containing original grayscale images (pixel values 0-255)<br>
     - "masks" containing groundtruth annotated images (pixel values 0-255)<br>
-2) run test_results_per_model.py file.
-Option one: run it in command line using following sytax:
+2) Make sure you have trained the model and .h5 file is in "model_folder"
+3) run either model_testing_function.py (command line) or test_from_code_editor.py (Pycharm, Spyder, ..) file.
+
+Option one: test model using command line with following sytax:
 ```
-python test_results_per_model.py --model_folder <folder where the model you want to test is> --test_set_folder <folder where yout test set is> --plot_results <boolian specifing if results on test images fill be saved as png images>
+python model_testing_function.py --model_folder <folder where the model you want to test is> --test_set_folder <folder where yout test set is> --plot_results <boolian specifing if results on test images fill be saved as png images>
 ```
-Option two: run it in code editor program (e.g. Spyder) by changing parameters specified at the end of the file:
+Option two: test model it in code editor program (e.g. Pycharm, Spyder) by changing parameters specified at in the test_from_code_editor.py file:
 ```
-if __name__ == "__main__":
-    # defined by user
-    model_folder = r"C:/Users/yourusername/Documents/small_unet_traning_folder/output_dir/U-net_2_LVL_8_FLT_2xconv/LR0.01_BS16_run0"
-    test_set_folder = r"C:/Users/yourusername/Documents/small_unet_traning_folder/input_dir/test_set"
-    plot_results = True
-    test_set_results(model_folder, test_set_folder, plot_results)
+# defined data folders
+model_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/output_dir/U-net_2_LVL_4_FLT_2xconv/LR0.01_BS16_run1"
+test_set_folder = r"C:/Users/skalima/Documents/RTDC_Data/TEST_UNET_CODE/input_dir/test_set"
+# define if images with FP (Blue) and FN (red) will be saved
+plot_results = True
 ```
 In .h5 file as attributes are saved "image_mean", "image_std", "image_org_size", "image_resized" values used during the inference for image preprocessing.
 Mean and Std values of the training set are used for standardization of the test set data, while original and resized pixel sizes of the images are used for resizing the test set images for the inference.
 
 ### Test set output:
+Output can be found in "model_folder". Output contains:
 1) file "test_set_results.csv" (NOTE: sep=;)
 with Dice, IoU, Accuracy, Precission, Recall per test set image and at the end of the file are average, median and std values per test set.
 2) if "plot_results = True" as part of the output will be a folder "test_set_images" with images that contain comparison between ground truth annotation and predicted mask on top of the original image.
