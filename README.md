@@ -127,7 +127,7 @@ with Dice, IoU, Accuracy, Precission, Recall per test set image and at the end o
 An example of such image is: 
 
 <center>
-<img src="test_set_output_example.png" alt="Output of test_results_per_model.py file if plot_results is set to True" width="250" height="80">
+<img src="example_files/test_set_output_example.png" alt="Output of test_results_per_model.py file if plot_results is set to True" width="250" height="80">
 </center>
 
 Where blue marks **FP** pixels and red **FN** pixels. Contour of the predicted mask is drawn in black.
