@@ -1,0 +1,10 @@
+﻿the parameter;value
+batch sizes;[8,16]
+learning rates;[0.01]
+number of epochs;5
+train-validation split;0.85
+experimental repeats;2
+dropout rate;0
+image augmentation;TRUE
+image original pixel size;(80, 250)
+image resized to;(64, 256)
