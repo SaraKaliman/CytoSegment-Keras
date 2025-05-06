@@ -31,7 +31,7 @@ If you have a test set place it in folder "test_set" having the same structure a
 
 In the "training_parameters_csv.csv" file add the batch sizes you want to use during training, learning rates you want to explore (code uses ReduceLROnPlateau by 50% after 10 epochs), training cross-validation split, number of times you want to repeat the experiments with the same training parameters (due to random effects arrising from GPU training, code used fixed random seed), dropout rate, if image augmentation will be done during training, the original image size in pixels as well as the desired resized pixes size of the images.<br>
 
-**The format of the values in csv file is specified in "guidline_for_training_parameters_csv.xlsx" file. This excel file is not used during training of the model and it serves only as guidline.** <br>
+**The format of the values in csv file is specified in "guidline_for_training_parameters_csv.xlsx" file that can be fount in example_files folder. This excel file is not used during training of the model and it serves only as guidline.** <br>
 
 #### Recomanded values of training parameters
 
